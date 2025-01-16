@@ -1,0 +1,54 @@
+Make,Model,Year,LicensePlate,VehicleTypeName,BranchName,RentalStatusText
+Ford,Mustang,1979,WY184XP,Coupe,Uptown Branch,Maintenance
+Toyota,Camry,2020,ZX123YZ,Sedan,Uptown Branch,Available
+Chevrolet,Silverado,2021,AB567CD,Truck,Midtown Branch,Available
+Honda,Civic,2022,EF890GH,Sedan,Eastside Branch,Rented
+Nissan,Rogue,2021,HI345JK,SUV,Westside Branch,Available
+Jeep,Wrangler,2019,LM678NO,SUV,Southside Branch,Under Maintenance
+Tesla,Model 3,2023,PQ901RS,Electric Car,Northside Branch,Available
+BMW,X5,2020,TU234VW,Luxury SUV,Central Branch,Available
+Harley-Davidson,Street 750,2018,XY567ZA,Motorcycle,Airport Branch,Available
+Ram,1500,2021,BC890DE,Pickup Truck,Harbor Branch,Rented
+Ford,F-250,2022,FG123HI,Heavy Duty Truck,Suburban Branch,Available
+Toyota,Sienna,2020,JK456LM,Minivan,Industrial Branch,Available
+Ducati,Panigale V4,2023,NO789PQ,Motorcycle,University Branch,Available
+Audi,A4,2021,RS012TU,Sedan,Downtown Branch,Rented
+Chevrolet,Corvette,2022,VW345XY,Sports Car,Uptown Branch,Available
+Volkswagen,Tiguan,2020,ZA678BC,SUV,Midtown Branch,Available
+Mazda,CX-5,2021,DE901FG,SUV,Eastside Branch,Under Maintenance
+Toyota,Tacoma,2022,HI234JK,Truck,Westside Branch,Available
+Honda,CR-V,2019,LM567NO,SUV,Southside Branch,Available
+Hyundai,Elantra,2020,PQ890RS,Sedan,Northside Branch,Rented
+Kia,Sorento,2021,TU123VW,SUV,Central Branch,Available
+Mercedes-Benz,GLE,2022,XY456ZA,Luxury SUV,Airport Branch,Available
+Subaru,Outback,2023,BC789DE,SUV,Harbor Branch,Available
+Ford,Escape,2021,FG012HI,SUV,Suburban Branch,Available
+GMC,Sierra,2022,JK345LM,Truck,Industrial Branch,Available
+Lexus,RX,2020,NO678PQ,Luxury SUV,University Branch,Available
+Chevrolet,Impala,2021,RS901TU,Sedan,Downtown Branch,Available
+Fiat,500,2022,VW234XY,Compact Car,Uptown Branch,Available
+Chrysler,Pacifica,2020,ZA567BC,Minivan,Midtown Branch,Rented
+Ford,Ranger,2021,DE678FG,Truck,Eastside Branch,Available
+Jeep,Cherokee,2023,HI901JK,SUV,Westside Branch,Available
+Nissan,Murano,2020,LM234NO,SUV,Southside Branch,Available
+Toyota,Highlander,2021,PQ567RS,SUV,Northside Branch,Available
+Mazda,Mazda3,2019,TU890VW,Sedan,Central Branch,Available
+BMW,3 Series,2020,XY123ZA,Luxury Sedan,Airport Branch,Available
+Honda,Odyssey,2022,BC456DE,Minivan,Harbor Branch,Rented
+Hyundai,Santa Fe,2023,FG789HI,SUV,Suburban Branch,Available
+Kia,Telluride,2021,JK012LM,SUV,Industrial Branch,Available
+Mercedes-Benz,C-Class,2020,NO345PQ,Luxury Sedan,University Branch,Available
+Chevrolet,Blazer,2021,RS678TU,SUV,Downtown Branch,Available
+Ford,Fusion,2022,VW901XY,Sedan,Uptown Branch,Available
+Subaru,Forester,2020,ZA123BC,SUV,Midtown Branch,Available
+Volkswagen,Jetta,2021,DE234FG,Sedan,Eastside Branch,Available
+Toyota,RAV4,2022,HI567JK,SUV,Westside Branch,Available
+Mazda,MX-5,2019,LM890NO,Convertible,Southside Branch,Available
+Audi,Q7,2020,PQ123RS,Luxury SUV,Northside Branch,Available
+Lexus,ES,2021,TU456VW,Luxury Sedan,Central Branch,Available
+Jeep,Gladiator,2022,XY789ZA,Truck,Airport Branch,Available
+Ford,Bronco,2023,BC012DE,SUV,Harbor Branch,Available
+Jeep,Gladiator,2022,BC012DE,Truck,Airport Branch,Available
+Ford,Bronco,2023,BC012DR,SUV,Harbor Branch South,Available
+Ford,Bronco,2023,BC012RE,SUV-Urban,Harbor Branch,Available
+Toyota,Highlander,2019,PA567PA,SUV,Harbor Branch,Available

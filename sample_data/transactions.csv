@@ -1,0 +1,41 @@
+Customer First Name,Customer Last Name,Vehicle Make,Vehicle Model,Licence Plate,Employee First Name,Employee Last Name,Rental Start Date,Rental End Date
+John,Doe,Toyota,Camry,ZX123YZ,Emily,Johnson,2024-01-01,2024-01-07
+Jane,Smith,Ford,F-250,FG123HI,Michael,Brown,2024-01-03,2024-01-10
+Alice,Johnson,Chevrolet,Silverado,AB567CD,Sarah,Davis,2024-01-05,2024-01-12
+Robert,Wilson,Honda,Civic,EF890GH,Robert,Wilson,2024-01-07,2024-01-14
+Laura,Brown,Nissan,Rogue,HI345JK,Linda,Taylor,2024-01-10,2024-01-17
+James,Miller,Toyota,Camry,ZX123YZ,James,Martinez,2024-01-12,2024-01-19
+Mary,Lewis,Fiat,500,VW234XY,Laura,White,2024-01-15,2024-01-22
+Richard,Martinez,Tesla,Model 3,PQ901RS,Richard,Clark,2024-01-18,2024-01-25
+Sarah,Anderson,GMC,Sierra,JK345LM,Nancy,Lewis,2024-01-20,2024-01-27
+Charles,Thompson,Subaru,Outback,BC789DE,Christopher,Walker,2024-01-22,2024-01-29
+Emily,Davis,Jeep,Wrangler,LM678NO,Mary,Hall,2024-01-25,2024-02-01
+Barbara,White,BMW,X5,TU234VW,Joseph,Allen,2024-01-28,2024-02-04
+Sarah,Anderson,Audi,Q7,PQ123RS,Barbara,Young,2024-01-30,2024-02-06
+James,Miller,Mazda,CX-5,DE901FG,Charles,King,2024-02-01,2024-02-08
+Laura,Brown,Hyundai,Santa Fe,FG789HI,Susan,Wright,2024-02-03,2024-02-10
+Thomas,Walker,Kia,Sorento,TU123VW,David,Scott,2024-02-05,2024-02-12
+Nancy,Hall,Ducati,Panigale V4,NO789PQ,Patricia,Adams,2024-02-07,2024-02-14
+Joseph,Martinez,Toyota,RAV4,HI567JK,Daniel,Baker,2024-02-09,2024-02-16
+Sarah,Anderson,Lexus,RX,NO678PQ,Lisa,Gonzalez,2024-02-11,2024-02-18
+David,Taylor,Mercedes-Benz,GLE,XY456ZA,Mark,Perez,2024-02-13,2024-02-20
+Michael,Johnson,Ford,Mustang,WY184XP,Emily,Johnson,2024-02-15,2024-02-22
+Linda,Moore,Honda,Odyssey,BC456DE,Michael,Brown,2024-02-17,2024-02-24
+Richard,Martinez,Mazda,Mazda3,TU890VW,Sarah,Davis,2024-02-19,2024-02-26
+Barbara,White,BMW,3 Series,XY123ZA,Robert,Wilson,2024-02-21,2024-02-28
+Charles,Thompson,Nissan,Murano,LM234NO,Linda,Taylor,2024-02-23,2024-03-01
+Susan,Garcia,Toyota,Highlander,PQ567RS,James,Martinez,2024-02-25,2024-03-03
+Joseph,Martinez,Mazda,MX-5,LM890NO,Laura,White,2024-02-27,2024-03-05
+Patricia,Harris,Audi,A4,RS012TU,Richard,Clark,2024-03-01,2024-03-08
+Christopher,Clark,Chevrolet,Corvette,VW345XY,Nancy,Lewis,2024-03-03,2024-03-10
+Mary,Lewis,Volkswagen,Tiguan,ZA678BC,Christopher,Walker,2024-03-05,2024-03-12
+Thomas,Walker,Toyota,Tacoma,HI234JK,Mary,Hall,2024-03-07,2024-03-14
+Nancy,Hall,Honda,CR-V,LM567NO,Joseph,Allen,2024-03-09,2024-03-16
+John,Doe,Hyundai,Elantra,PQ890RS,Barbara,Young,2024-03-11,2024-03-18
+Jane,Smith,Kia,Sorento,TU123VW,Charles,King,2024-03-13,2024-03-20
+Alice,Johnson,Mercedes-Benz,GLE,XY456ZA,Susan,Wright,2024-03-15,2024-03-22
+Robert,Wilson,Subaru,Outback,BC789DE,David,Scott,2024-03-17,2024-03-24
+Laura,Brown,Ford,Escape,FG012HI,Patricia,Adams,2024-03-19,2024-03-26
+James,Miller,GMC,Sierra,JK345LM,Daniel,Baker,2024-03-21,2024-03-28
+Mary,Lewis,Lexus,RX,NO678PQ,Lisa,Gonzalez,2024-03-23,2024-03-30
+Richard,Martinez,Chevrolet,Impala,RS901TU,Mark,Perez,2024-03-25,2024-04-01
