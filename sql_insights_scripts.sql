@@ -1,3 +1,8 @@
+-- This script contains SQL queries for insights from the OLTP  and OLAP databases.
+-- It includes queries for vehicle rentals, revenue, and maintenance.
+-- Since the OLTP database is connected to the OLAP database, the queries are executed on the OLAP database.
+-- =======================================================================================
+
 -- OLTP Query 1: "What are the top 5 most rented vehicles (by number of rentals) and their total revenue?"
 SELECT 
     v.make as "Make",

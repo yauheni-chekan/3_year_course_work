@@ -1,3 +1,7 @@
+-- This script contains functions for ETL operations between the OLTP and DWH databases.
+-- It includes functions for populating the date dimension, updating dimensions, and updating facts.
+-- =======================================================================================
+
 -- In the DWH (OLAP) database
 -- Create extension if not exists
 CREATE EXTENSION IF NOT EXISTS postgres_fdw;

@@ -1,5 +1,15 @@
--- Loading vehicle data from a csv file into OLTP database ('vehicle_rental')
+-- This script contains functions for importing data from CSV files into the OLTP database ('vehicle_rental').
+-- The following functions are included:
+
+-- Each function:
+-- 1. Creates a temporary staging table
+-- 2. Loads CSV data into staging
+-- 3. Validates and transforms data
+-- 4. Inserts valid records into target tables
+-- 5. Handles errors and provides logging
+
 -- =======================================================================================
+-- Load vehicle data from a csv file into OLTP database ('vehicle_rental')
 
 CREATE OR REPLACE FUNCTION load_vehicle_data(file_path TEXT)
 RETURNS VOID AS $$
@@ -24,7 +34,6 @@ BEGIN
 
     -- Step 3: Process records in the staging table
     FOR record IN SELECT * FROM vehicle_staging LOOP
-        -- Validate and fetch VehicleTypeID
         SELECT vehicle_type_id INTO v_type_id
         FROM vehicle_type
         WHERE type_name = record.vehicle_type_name;
@@ -34,7 +43,6 @@ BEGIN
             CONTINUE;
         END IF;
 
-        -- Validate and fetch BranchID
         SELECT branch_id INTO brch_id
         FROM branch
         WHERE name = record.branch_name;
@@ -144,7 +152,6 @@ BEGIN
 
     -- Process each row in the staging table
     FOR record IN SELECT * FROM transaction_staging LOOP
-        -- Fetch customer_id
         SELECT customer_id
         INTO v_customer_id
         FROM customer
@@ -156,7 +163,6 @@ BEGIN
             CONTINUE;
         END IF;
 
-        -- Fetch vehicle_id
         SELECT vehicle_id
         INTO v_vehicle_id
         FROM vehicle
@@ -167,7 +173,6 @@ BEGIN
             CONTINUE;
         END IF;
 
-        -- Fetch employee_id
         SELECT employee_id
         INTO v_employee_id
         FROM employee
@@ -235,7 +240,6 @@ BEGIN
 
 	-- Process each row in the staging table
     FOR record IN SELECT * FROM payment_staging LOOP
-		-- Fetch vehicle_id
         SELECT vehicle_id
         INTO temp_vehicle_id
         FROM vehicle
@@ -246,7 +250,6 @@ BEGIN
 			CONTINUE;
 		END IF;
 	
-		-- Fetch transaction_id
 		SELECT transaction_id
 		INTO temp_transaction_id
 		FROM rental_transaction
@@ -299,7 +302,6 @@ BEGIN
 
 	-- Process each row in the staging table
     FOR record IN SELECT * FROM maintenance_staging LOOP
-		-- Fetch vehicle_id
         SELECT vehicle_id
         INTO temp_vehicle_id
         FROM vehicle

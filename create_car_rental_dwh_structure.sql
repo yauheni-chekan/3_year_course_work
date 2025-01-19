@@ -1,4 +1,6 @@
 -- SQL Script to Create DWH Tables
+-- The database is named 'vehicle_rental_dwh' and is owned by the 'postgres' user.
+-- =======================================================================================
 
 -- Dimension Tables
 CREATE TABLE dim_customer (
@@ -101,7 +103,7 @@ CREATE TABLE fact_maintenance (
     CONSTRAINT unique_maintenance UNIQUE (vehicle_id, maintenance_date_id, service_type)
 );
 
--- Create ETL control table
+-- Create ETL control table to track the status of the ETL process
 CREATE TABLE etl_control (
     etl_id SERIAL PRIMARY KEY,
     source_table VARCHAR(50),
