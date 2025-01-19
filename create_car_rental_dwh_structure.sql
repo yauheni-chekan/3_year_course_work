@@ -36,7 +36,7 @@ CREATE TABLE dim_employee (
     last_name VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL,
     phone_number VARCHAR(15),
-    branch_id INT NOT NULL,
+    branch_id INT NOT NULL REFERENCES dim_branch(branch_id),
     valid_from TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     valid_to TIMESTAMP DEFAULT '9999-12-31',
     is_active BOOLEAN DEFAULT TRUE,
@@ -61,8 +61,8 @@ CREATE TABLE dim_vehicle (
     model VARCHAR(50) NOT NULL,
     production_year INT NOT NULL,
     license_plate VARCHAR(20) NOT NULL,
-    vehicle_type_id INT NOT NULL,
-    branch_id INT NOT NULL,
+    vehicle_type_id INT NOT NULL REFERENCES dim_vehicle_type(vehicle_type_id),
+    branch_id INT NOT NULL REFERENCES dim_branch(branch_id),
     rental_availability BOOLEAN DEFAULT TRUE,
     valid_from TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     valid_to TIMESTAMP DEFAULT '9999-12-31',
@@ -83,11 +83,11 @@ CREATE TABLE dim_date (
 -- Fact Tables
 CREATE TABLE fact_rental_transactions (
     transaction_id SERIAL PRIMARY KEY,
-    customer_id INT REFERENCES dim_customer(customer_id),
-    vehicle_id INT REFERENCES dim_vehicle(vehicle_id),
-    employee_id INT REFERENCES dim_employee(employee_id),
-    rental_start_date_id INT REFERENCES dim_date(date_id),
-    rental_end_date_id INT REFERENCES dim_date(date_id),
+    customer_id INT NOT NULL REFERENCES dim_customer(customer_id),
+    vehicle_id INT NOT NULL REFERENCES dim_vehicle(vehicle_id),
+    employee_id INT NOT NULL REFERENCES dim_employee(employee_id),
+    rental_start_date_id INT NOT NULL REFERENCES dim_date(date_id),
+    rental_end_date_id INT NOT NULL REFERENCES dim_date(date_id),
     payment_amount DECIMAL(10, 2),
     payment_method VARCHAR(50),
     CONSTRAINT unique_transaction UNIQUE (customer_id, vehicle_id, employee_id, rental_start_date_id, rental_end_date_id)
@@ -95,8 +95,8 @@ CREATE TABLE fact_rental_transactions (
 
 CREATE TABLE fact_maintenance (
     maintenance_id SERIAL PRIMARY KEY,
-    vehicle_id INT REFERENCES dim_vehicle(vehicle_id),
-    maintenance_date_id INT REFERENCES dim_date(date_id),
+    vehicle_id INT NOT NULL REFERENCES dim_vehicle(vehicle_id),
+    maintenance_date_id INT NOT NULL REFERENCES dim_date(date_id),
     service_type VARCHAR(100) NOT NULL,
     maintenance_cost DECIMAL(10, 2) NOT NULL,
     notes TEXT,
