@@ -236,7 +236,6 @@ BEGIN
         payment_method
     )
     WITH rental_payments AS (
-        -- Aggregate payments per transaction
         SELECT 
             rt.transaction_id,
             rt.customer_id as source_customer_id,
@@ -244,11 +243,10 @@ BEGIN
             rt.employee_id as source_employee_id,
             rt.rental_start_date,
             rt.rental_end_date,
-            STRING_AGG(p.payment_method, ', ' ORDER BY p.payment_method) as payment_method,
+            LEFT(STRING_AGG(DISTINCT p.payment_method, ', ' ORDER BY p.payment_method), 50) as payment_method,
             SUM(p.amount) as total_amount
         FROM oltp.rental_transaction rt
         LEFT JOIN oltp.payment p ON p.transaction_id = rt.transaction_id
-        WHERE rt.last_modified > v_last_etl_time  -- Restored the incremental load condition
         GROUP BY rt.transaction_id, rt.customer_id, rt.vehicle_id, 
                  rt.employee_id, rt.rental_start_date, rt.rental_end_date
     )
@@ -268,7 +266,8 @@ BEGIN
     JOIN dim_employee de ON rp.source_employee_id = de.source_id
         AND CURRENT_TIMESTAMP BETWEEN de.valid_from AND de.valid_to
     JOIN dim_date dd_start ON rp.rental_start_date::date = dd_start.full_date
-    JOIN dim_date dd_end ON rp.rental_end_date::date = dd_end.full_date;
+    JOIN dim_date dd_end ON rp.rental_end_date::date = dd_end.full_date
+    ON CONFLICT (customer_id, vehicle_id, employee_id, rental_start_date_id, rental_end_date_id) DO NOTHING;
 
     -- Get count of processed records
     GET DIAGNOSTICS v_count = ROW_COUNT;
@@ -298,20 +297,19 @@ BEGIN
         maintenance_date_id,
         service_type,
         maintenance_cost,
-        notes,
-        employee_id
+        notes
     )
     SELECT 
         dv.vehicle_id,
         dd.date_id as maintenance_date_id,
         m.service_type,
         m.maintenance_cost,
-        m.notes,
-        NULL as employee_id  -- mechanic_id doesn't exist in source table
+        m.notes
     FROM oltp.maintenance m
     JOIN dim_vehicle dv ON m.vehicle_id = dv.source_id 
         AND CURRENT_TIMESTAMP BETWEEN dv.valid_from AND dv.valid_to
-    JOIN dim_date dd ON m.service_date = dd.full_date;
+    JOIN dim_date dd ON m.service_date = dd.full_date
+    ON CONFLICT (vehicle_id, maintenance_date_id, service_type) DO NOTHING;
 
     -- Get count of processed records
     GET DIAGNOSTICS v_count = ROW_COUNT;

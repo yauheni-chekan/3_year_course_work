@@ -87,7 +87,8 @@ CREATE TABLE fact_rental_transactions (
     rental_start_date_id INT REFERENCES dim_date(date_id),
     rental_end_date_id INT REFERENCES dim_date(date_id),
     payment_amount DECIMAL(10, 2),
-    payment_method VARCHAR(50)
+    payment_method VARCHAR(50),
+    CONSTRAINT unique_transaction UNIQUE (customer_id, vehicle_id, employee_id, rental_start_date_id, rental_end_date_id)
 );
 
 CREATE TABLE fact_maintenance (
@@ -97,7 +98,7 @@ CREATE TABLE fact_maintenance (
     service_type VARCHAR(100) NOT NULL,
     maintenance_cost DECIMAL(10, 2) NOT NULL,
     notes TEXT,
-    employee_id INT REFERENCES dim_employee(employee_id)
+    CONSTRAINT unique_maintenance UNIQUE (vehicle_id, maintenance_date_id, service_type)
 );
 
 -- Create ETL control table
@@ -151,4 +152,3 @@ CREATE INDEX idx_fact_rental_dates ON fact_rental_transactions(rental_start_date
 -- fact_maintenance
 CREATE INDEX idx_fact_maintenance_vehicle ON fact_maintenance(vehicle_id);
 CREATE INDEX idx_fact_maintenance_date ON fact_maintenance(maintenance_date_id);
-CREATE INDEX idx_fact_maintenance_employee ON fact_maintenance(employee_id);
